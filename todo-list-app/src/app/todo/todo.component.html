@@ -1,5 +1,17 @@
-<div class='taskListItem' *ngFor="let todos of todo">
-    <button>Complete</button>
-    <h1 class="task">{{todos.task}}</h1>
-    <h1 class="status">{{todos.completed}}</h1>
+<div class="todoListContent">
+    <h1 class="title">TODO List</h1>
+    <h2 class="subtitle">A place to store your todos</h2>
+
+    <!-- input -->
+
+    <div class='taskListItem' *ngFor="let todos of todo">
+        <button class="completeButton">Complete</button>
+        <h3 class="task">{{todos.task}}</h3>
+        <!-- <h3 class="status">{{todos.completed}}</h3> -->
+    </div>
+
+    <!-- input -->
+
+    <button class="addButton">Add</button>
 </div>
+

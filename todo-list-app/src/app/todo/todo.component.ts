@@ -10,6 +10,7 @@ interface Todo {
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+  filter = '';
 
   
   todo: Todo[] = [
