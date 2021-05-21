@@ -2,16 +2,19 @@
     <h1 class="title">TODO List</h1>
     <h2 class="subtitle">A place to store your todos</h2>
 
-    <!-- input -->
+    <input [(ngModel)]="keyword" placeholder="Filter Your To-Do's"/>
 
-    <div class='taskListItem' *ngFor="let todos of todo">
-        <button class="completeButton">Complete</button>
-        <h3 class="task">{{todos.task}}</h3>
-        <!-- <h3 class="status">{{todos.completed}}</h3> -->
+    <div class='taskListItem' *ngFor="let todos of todo | filter: keyword; let i = index">
+   
+            <p class="numbers">{{i + 1 + "."}}</p>
+            <button (click)="completeTask(i)" *ngIf="!todos.completed" class="completeButton">Complete</button>
+            <h3 [ngClass]="{strikethrough: todos.completed}" class="task">{{todos.task}}</h3>
+            <!-- <h3 class="status">{{todos.completed}}</h3> -->
+            <button class="removeX" (click)="removeTask(i)">x</button>
+        
     </div>
 
-    <!-- input -->
-
+    <input class="addInput" placeholder="Add Your To Do">
     <button class="addButton">Add</button>
 </div>
 
