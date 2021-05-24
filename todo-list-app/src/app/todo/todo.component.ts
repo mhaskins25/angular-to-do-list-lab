@@ -12,11 +12,12 @@ interface Todo {
 })
 export class TodoComponent implements OnInit {
   keyword: string = "";
+  addInput: string = "";
   todo: Todo[] = [
     { task: 'fold clothes', completed: false },
     { task: 'put clothes in dresser', completed: false },
     { task: 'relax', completed: false },
-    { task: 'try to pet a cat', completed: true },
+    { task: 'try to pet a cat', completed: false },
     { task: 'pet a dog', completed: false },
     { task: 'be awesome', completed: false },
   ];
@@ -33,8 +34,12 @@ export class TodoComponent implements OnInit {
     this.todo[index].completed = true;
   }
 
-  addTask(index: number){
-    this.todo[index].completed = false;
+  addTask(){
+    this.todo.push({
+      task: this.addInput,
+      completed: false
+    })
+    this.addInput='';
   }
 
 

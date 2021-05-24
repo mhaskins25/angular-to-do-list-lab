@@ -14,7 +14,7 @@
         
     </div>
 
-    <input class="addInput" placeholder="Add Your To Do">
-    <button class="addButton">Add</button>
+    <input [(ngModel)]="addInput" placeholder="Add Your To Do">
+    <button class="addButton" (click)="addTask()">Add</button>
 </div>
 
