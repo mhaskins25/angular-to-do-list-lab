@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any[], keyword?: string): any[] {
-    return value;
+    return value.filter((item)=>item.task.includes(keyword));
   }
 
 }
